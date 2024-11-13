@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 @RestController
 public class EmpController {
@@ -24,7 +26,12 @@ public class EmpController {
   public List<Employee> getAllEmployees() {
     return employeeSerivce.readEmployees();
   }
-  
+
+  //GET PARTICULAR EMPLOYEE
+  @GetMapping("employees/{id}")
+  public Employee getEmployeeById(@PathVariable Long id) {
+    return employeeSerivce.readEmployee(id);
+  }
   
   //CREATE EMPLOYEE DATA
   //THIS METHOD IS ASCCEPTION JSON OBJECT AS PARAMETER{KEY:VALUE}
@@ -46,6 +53,12 @@ public class EmpController {
     return "NOT FOUND";
   }
   
+  //UPDATE EMPloyees
+  @PutMapping("employees/{id}")
+  public String putMethodName(@PathVariable Long id,@RequestBody Employee employee) {
+      String msg=employeeSerivce.updateEmployee(id, employee);
+      return msg;
+  }
 
   //1:44:27
    
