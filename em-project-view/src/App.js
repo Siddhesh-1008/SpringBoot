@@ -6,14 +6,14 @@ import { Navbar } from "./components/Navbar";
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<EmployeeList />}/>
-        <Route path="/addEmployee" element={ <AddEmployee/>}/>
-      </Routes>
-      
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<EmployeeList />} />
+          <Route path="/addEmployee" element={<AddEmployee />} />
+        </Routes>
       </BrowserRouter>
+      {/* 47.20 */}
     </>
   );
 }

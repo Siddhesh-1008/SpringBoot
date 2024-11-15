@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-EmployeemanagemepntProjectApplication<employeemanagemepnt-project>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "org.siddheshproject.employeemanagemepnt_project.EmployeemanagemepntProjectApplication",
+      "projectName": "employeemanagemepnt-project",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
