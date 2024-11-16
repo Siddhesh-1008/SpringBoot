@@ -39,6 +39,12 @@ export const EmployeeList = () => {
     });
   };
 
+  //UPDATE CURRENT EMPLOYEE DETAILS
+  const editEmployee = (event, id) => {
+    event.preventDefault();
+    navigate(`/editEmployee/${id}`);
+  };
+
   return (
     <>
       <div className="container mx-auto my-8">
@@ -80,15 +86,23 @@ export const EmployeeList = () => {
                       {employee.email}
                     </td>
                     <td className="text-left px-6 py-4 whitespace-nowrap">
-                      <button>Edit ✏️</button>
-                      <button
+                      <a
+                        onClick={(event) => {
+                          editEmployee(event, employee.id);
+                        }}
+                        className="hover:text-green-500 hover:cursor-pointer"
+                      >
+                        Edit ✏️
+                      </a>
+                      <a
                         onClick={(event) => {
                           deleteEmployee(event, employee.id);
                         }}
+                        className="hover:text-red-500 hover:cursor-pointer"
                       >
                         {" "}
                         Delete 🗑️
-                      </button>
+                      </a>
                     </td>
                   </tr>
                 ))}
